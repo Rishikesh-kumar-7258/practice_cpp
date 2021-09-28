@@ -5,34 +5,49 @@ void insertion(int arr[], int);
 void insertion_d(int arr[], int n);
 void linear_search(int arr[], int n, int v);
 void n_bit_sum(int a[], int b[], int c[], int n);
+void selection(int arr[], int n);
 
 int main()
 {
-//	int arr[] = {1, 5, 4, 6, 3, 2};
-//	int n = sizeof(arr)/sizeof(*arr);
-//	int v = 5;
-////	cout << n << endl;
-//	for (int i = 0; i < n; i++) cout << arr[i] << " ";
-//	
-//	cout << endl;
-//	
-//	linear_search(arr, n, v);
-//	
-//	for (int i = 0; i < n; i++) cout << arr[i] << " ";
-//	
-//	cout << endl;
-
-	int a[] = {1, 0, 1, 0};
-	int b[] = {0, 1, 1, 0};
-	int n = sizeof(a)/sizeof(*a);
-	int c[n+1];
+	int arr[] = {1, 5, 4, 6, 3, 2};
+	int n = sizeof(arr)/sizeof(*arr);
+	int v = 5;
+//	cout << n << endl;
+	for (int i = 0; i < n; i++) cout << arr[i] << " ";
 	
-	n_bit_sum(a, b, c, n);
-	
-	for (int i = 0; i <= n; i++) cout << c[i] << " ";
 	cout << endl;
 	
+	selection(arr, n);
+	
+	for (int i = 0; i < n; i++) cout << arr[i] << " ";
+	
+	cout << endl;
+
+//	int a[] = {1, 0, 1, 0};
+//	int b[] = {0, 1, 1, 0};
+//	int n = sizeof(a)/sizeof(*a);
+//	int c[n+1];
+//	
+//	n_bit_sum(a, b, c, n);
+//	
+//	for (int i = 0; i <= n; i++) cout << c[i] << " ";
+//	cout << endl;
+	
 	return 0;
+}
+
+void selection(int arr[], int n)
+{
+	for (int i = 0; i < n-1; i++)
+	{
+		int min_ind = i;
+		for (int j = i; j < n; j++)
+		{
+			if (arr[min_ind] > arr[j]) min_ind = j;
+		}
+		
+		swap(arr[i], arr[min_ind]);
+	}
 }
 
 void n_bit_sum(int a[], int b[], int c[], int n)
