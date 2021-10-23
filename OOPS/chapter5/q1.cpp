@@ -11,7 +11,7 @@ class Account{
         string name, type;
         int account_number, balance;
     public:
-        Account(); // constructor method
+        Account(string, int); // constructor method
 
         void deposit();
         void withdraw();
@@ -19,25 +19,16 @@ class Account{
         void display() const;
 };
 
-Account :: Account()
+Account :: Account(string s, int a)
 {
-    cout << "Enter your name: ";
-    cin >> name;
-
-    int a;
-    do
-    {
-        cout << "Choose one account type: \n\t\tEnter 1 for saving 2 for current: ";
-        cin >> a;
-    } while (a != 1 || a != 2);
-    
-    
-
-    if (a == 1) type = "Savings";
-    else if (a == 2) type = "Current";
+    name = s;
 
     int account_number = 1234;
     int balance = 0;
+
+    if (a == 1) type = "savings";
+    else if (a == 2) type = "current";
+
 
     cout << "The account for " << name << " is successfully created.\nYour account number is " << account_number << " and your current balance is " << balance;
     cout << "Welcome to the prince bank" << endl;
@@ -92,9 +83,18 @@ void Account :: display() const
 
 int main()
 {
-    Account a;
-    a.deposit();
-    a.withdraw();
-    a.display();
+    string s;
+    cout << "Enter your name: ";
+    cin >> s;
+
+    int a;
+    cout << "Choose the account type:\n\t1. for savings\n\t2. for current\n";
+    cin >> a;
+
+    Account me(s, a);
+    me.deposit();
+    me.withdraw();
+    me.display();
+
     return 0;
 }
