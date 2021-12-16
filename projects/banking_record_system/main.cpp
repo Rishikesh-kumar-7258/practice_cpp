@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <ctime>
 #include "bank_record.h"
 using std::cout;
 using std::cin;
@@ -12,6 +13,10 @@ void add_new_record();
 
 int main()
 {
+    // std::time_t t = std::time(0);
+    // std::tm* t2 = std::localtime(&t);
+    // cout << (t2->tm_hour) <<  " " << (t2->tm_year) << endl;
+    
     bool is_running = true;
     
     while (is_running)
