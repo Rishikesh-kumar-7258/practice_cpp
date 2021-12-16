@@ -1,10 +1,14 @@
 #include <iostream>
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 
 class Account{
 
 private:
     // User specified data
-    std::string name;
+    string name;
     int account_number;
     double balance;
 
@@ -15,10 +19,13 @@ private:
 public:
 
     // constructor
-    Account(std::string name);
+    Account(string name);
 
     // user specific functions
     void display_user() const;
+    double get_balance() const;
+    string get_name() const;
+    int get_account_number() const;
     void deposit(double);
     void withdraw(double);
 
@@ -30,7 +37,7 @@ public:
 
 int Account :: user_count = 0;
 
-Account :: Account(std::string name){
+Account :: Account(string name){
 
     user_count++;
 
@@ -43,9 +50,9 @@ Account :: Account(std::string name){
 
 void Account :: display_user() const{
     
-        std::cout << "Account Number: " << account_number << std::endl;
-        std::cout << "Name: " << name << std::endl;
-        std::cout << "Balance: " << balance << std::endl;
+    cout << "Name: " << name << endl;
+    cout << "Account Number: " << account_number << endl;
+    cout << "Balance: " << balance << endl;
 }
 
 void Account :: deposit(double amount){
@@ -57,7 +64,22 @@ void Account :: withdraw(double amount){
 
     if (amount > balance + 1000)
     {
-        std::cout << "Insufficient funds" << std::endl;
+        cout << "Insufficient funds" << endl;
     }
     else balance -= amount;
+}
+
+int Account :: get_account_number() const
+{
+    return account_number;
+}
+
+string Account :: get_name() const
+{
+    return name;
+}
+
+double Account :: get_balance() const
+{
+    return balance;
 }
