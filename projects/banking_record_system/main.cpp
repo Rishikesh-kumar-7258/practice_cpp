@@ -8,6 +8,7 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::ofstream;
+using std::getline;
 
 void add_new_record();
 
@@ -27,6 +28,7 @@ int main()
         cout << "2. Search for a record" << endl;
         cout << "3. Exit" << endl;
 
+        cout << "Enter your choice here : ";
         int choice; cin >> choice;
 
         switch(choice)
@@ -49,8 +51,9 @@ int main()
 
 void add_new_record()
 {
-    cout << "Enter your name: ";
-    string name; cin >> name;
+    cout << "Enter your name: \n";
+    string name;
+    getline(cin, name);
 
     Account new_person(name);
 
@@ -59,5 +62,5 @@ void add_new_record()
     fout << new_person.get_name() << "," << new_person.get_account_number() << "," << new_person.get_balance() << endl;
     fout.close();
     
-    cout << "New record added successfully!" << endl;
+    cout << "\n\tNew record added successfully!" << endl;
 }
