@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
 
 class Account{
 
@@ -30,7 +32,8 @@ public:
     void withdraw(double);
 
     // static functions
-    static void search();
+    static Account search(int acc);
+    static vector<Account> search(string name);
     static void display_All();
     static void delete_user(int);
 };
@@ -82,4 +85,10 @@ string Account :: get_name() const
 double Account :: get_balance() const
 {
     return balance;
+}
+
+vector<Account> Account :: search(string name)
+{
+    ifstream fin;
+    fin.open("Bank_record.csv");
 }
