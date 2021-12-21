@@ -26,7 +26,6 @@ int main()
     Database db({"Name", "Account", "Balance"});
     db.addrow({"Prince", "20010", "5000"});
     db.showdata();
-
     // std::time_t t = std::time(0);
     // std::tm* t2 = std::localtime(&t);
     // cout << (t2->tm_hour) <<  " " << (t2->tm_year) << endl;

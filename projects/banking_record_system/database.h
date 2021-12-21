@@ -61,7 +61,7 @@ class Database
 
         void addrow(vector<string> row)
         {
-            ofstream fout(filename);
+            ofstream fout(filename, std::ios_base::app);
             for (string curr : row)
             {
                 fout << curr << ",";
