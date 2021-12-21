@@ -1,10 +1,15 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <vector>
 using std::string;
 using std::vector;
 using std::ifstream;
 using std::ofstream;
+using std::ostringstream;
+using std::endl;
+using std::cout;
+using std::cin;
 
 class Database
 {
@@ -13,12 +18,12 @@ class Database
         vector<string> header;
         string filename;
 
-        vector<string> split_row(string row)
+        vector<string> split_row(string r)
         {
             vector<string> ans;
 
             string curr = "";
-            for (char c : row)
+            for (char c : r)
             {
                 if (c == ',')
                 {
@@ -66,17 +71,28 @@ class Database
             fout.close();
         }
 
-        void showdata() const{
+        void showdata(){
             
             ifstream fin(filename);
-            string line;
-            while (getline(fin, line))
-            {
-                vector<string> d = split_row((string)line);
+            ostringstream ss;
 
-                for (string i : d) cout << i << "\t\t";
-                cout << endl;
-            }
+            ss << fin.rdbuf();
+            string s = ss.str();
             
+            string line = "";
+            for (char c : s)
+            {
+                line += c;
+
+                if (c == '\n') 
+                {
+                    vector<string> curr = split_row(line);
+                    line = "";
+
+                    for (string col : curr) cout << col << "\t\t";
+                    cout << endl;
+                }
+            }
+
         }
 };
