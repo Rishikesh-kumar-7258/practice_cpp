@@ -1,0 +1,74 @@
+#include <iostream.h>
+#include <conio.h>
+#include <string.h>
+
+void bin_to_dec();
+void dec_to_bin();
+
+void main()
+{
+ clrscr();
+ cout << "\n\tPlease choose from below" <<endl;
+ cout << "\t1.Binary to decimal" << endl;
+ cout << "\t2. Decimal to binary" << endl;
+
+ int choice; cin >> choice;
+ switch(choice)
+ {
+ case 1:
+	bin_to_dec();
+	break;
+ case 2:
+	dec_to_bin();
+	break;
+ default:
+	cout << "Please Enter a valid choice" << endl;
+	break;
+ }
+}
+void bin_to_dec()
+{
+	cout << "Enter the binary number: ";
+	char* b; cin >> b;
+
+	int dec = 0;
+	int n = strlen(b);
+	for (int i = 0; i < n; i++)
+	{
+		dec = dec*2 + (b[n-1-i]-'0');
+	}
+	cout << "The decimal number is: " << dec << endl;
+	cout << "Press any key to exit" ;
+	int ex; cin >> ex;
+	return;
+
+}
+void dec_to_bin()
+{
+	cout << "Enter the decimal number: ";
+	int a; cin >> a;
+
+	int v[64], i = 0;
+	for (i = 0; i < 64; i++)
+	{
+		v[i] = 0;
+	}
+	i = 0;
+	while (a)
+	{
+		int rem = a&1;
+		v[i] = rem;
+		a >>= 1;
+		i++;
+	}
+	cout << "The decimal representation is: ";
+	for (int j = 0; j < 64; j++)
+	{
+		cout << v[63-j];
+	}
+	cout << endl;
+	cout << "Enter any key to exit";
+	int ex; cin >> ex;
+
+	return;
+}

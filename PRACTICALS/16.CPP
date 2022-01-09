@@ -1,0 +1,14 @@
+m#include <iostream.h>
+#include <conio.h>
+
+void main()
+{
+	clrscr();
+	cout << "Enter distace: ";
+	float d; cin >> d;
+	cout << "Enter time taken: ";
+	float t; cin >> t;
+	float speed = d / t;
+	cout << "The speed is : " << speed << endl;
+	getch();
+}

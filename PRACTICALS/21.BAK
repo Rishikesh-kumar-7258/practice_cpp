@@ -1,0 +1,38 @@
+#include <iostream.h>
+#include <conio.h>
+
+int power(int, int);
+
+void main()
+{
+	clrscr();
+	cout << "Enter a and b: ";
+	int a, b; cin >> a >> b;
+
+	int ans = power(a,b);
+	cout << a << " to the power " << b << " is " << ans << endl;
+	getch();
+}
+int power(int a,int b)
+{
+	int ans = 1;
+	if (!b) return ans;
+
+	while (b)
+	{
+		if (b&1)
+		{
+			ans *= a;
+			b--;
+		}
+		else
+		{
+			a *= a;
+			b /= 2;
+		}
+	}
+
+
+	return ans;
+
+}

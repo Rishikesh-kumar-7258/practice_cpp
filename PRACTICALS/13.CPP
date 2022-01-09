@@ -1,0 +1,11 @@
+#include <iostream.h>
+#include <conio.h>
+
+void main()
+{
+	clrscr();m
+	int ans = 2 - 3 + 4 * 12 / 3;
+	cout << "Without precedence answer should be 12." << endl;
+	cout <<"With precedence answer is :" << ans << endl;
+	getch();
+}

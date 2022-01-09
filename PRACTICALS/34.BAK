@@ -1,0 +1,46 @@
+#include <iostream.h>
+#include <conio.h>
+
+class person
+{
+	protected:
+		char *name;
+		int age;
+};
+
+class student : public person
+{
+	protected:
+		char *school;
+		char *city;
+		int std;
+		int roll;
+	public:
+		student(char *n, int ag, char *sc, char *c, int st, int r)
+		{
+			name = n;
+			age = ag;
+			school = sc;
+			city = c;
+			std = st;
+			roll = r;
+		}
+
+		void display const
+		{
+			cout << "Name: " << name << endl;
+			cout << "Age: " << age << endl;
+			cout << "School: " << school << endl;
+			cout << "STD: " << std << endl;
+			cout << "roll: " << roll << endl;
+		}
+};
+
+void main()
+{
+	clrscr();
+	student me("prince", 20, "GGV", "Bilaspur" , 14, 51);
+	me.display();
+
+	getch();
+}

@@ -1,0 +1,14 @@
+m#include <iostream.h>
+#include <conio.h>
+
+void main()
+{
+	clrscr();
+	cout << "Enter a number: ";
+	int a; cin >> a;
+
+	if (a&1) cout << "The number is odd";
+	else cout << "The number is even";
+	cout << endl;
+	getch();
+}

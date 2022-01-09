@@ -1,0 +1,38 @@
+#include <iostream.h>
+#include <conio.h>
+
+struct school
+{
+	char *name;
+	char *city;
+};
+
+struct student
+{
+	char *name;
+	int std;
+	school sc;
+};
+
+void main()
+{
+	clrscr();
+	student a;
+
+	cout << "Enter student detials: " << endl;
+	cout << "Name: "; cin >> a.name;
+	cout << "STD: "; cin >> a.std;
+       //	cin.ignore();
+	cout << "School name: "; cin >> a.sc.name;
+	cout << "School city: "; cin >> a.sc.city;
+	cout << endl;
+
+	cout << "\tEntered student details" << endl;
+	cout << "Name: " << a.name << endl;
+	cout << "STD: " << a.std << endl;
+	cout << "School name: " << a.sc.name << endl;
+	cout << "School city : " << a.sc.city << endl;
+
+
+	getch();
+}
