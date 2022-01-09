@@ -1,4 +1,4 @@
-#include <iostream.h>
+m#include <iostream.h>
 #include <conio.h>
 
 int fact(int);
@@ -15,7 +15,7 @@ void main()
 }
 
 int fact(int n)
-{
+{m
 	if (n == 0) return 1;
 
 	return n * fact(n-1);
