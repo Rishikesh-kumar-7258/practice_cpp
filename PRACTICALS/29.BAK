@@ -44,7 +44,7 @@ void main()
 
 double area(double r)
 {
-	return 2 * 3.14 * r;
+	return 3.14 * r * r;
 }
 
 double area(double l, double w)
